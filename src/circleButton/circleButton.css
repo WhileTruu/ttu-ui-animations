@@ -15,7 +15,7 @@
   position: absolute;
 }
 
-.btn-circle-container .btn .spin {
+.btn-circle-container .btn:active .spin {
   -webkit-animation: spin .3s linear;
   -moz-animation: spin .3s linear;
   -o-animation: spin .3s linear;
