@@ -1,26 +1,36 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import Chat from './chat'
-import CircleButton from './circleButton/CircleButton'
+import ChatButton from './chatButton'
 
-import logo from './logo.svg'
-import './App.scss'
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.toggleOpenState = this.toggleOpenState.bind(this)
+    this.state = {
+      isOpen: false,
+    }
+  }
 
-const App = () => (
-  <div className="App">
-    <div className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h2>Welcome to React</h2>
-    </div>
-    <div className="row">
-      <div className="col-12 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
-        <div className="py-5">
-          <Chat />
+  toggleOpenState() {
+    this.setState({ isOpen: !this.state.isOpen })
+  }
+
+  render() {
+    const { isOpen } = this.state
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+            <div className="py-5">
+              <Chat isOpen={isOpen} />
+            </div>
+            <ChatButton toggleOpenState={this.toggleOpenState} isOpen={isOpen} />
+          </div>
         </div>
-        <CircleButton />
       </div>
-    </div>
-  </div>
-)
+    )
+  }
+}
 
 export default App
