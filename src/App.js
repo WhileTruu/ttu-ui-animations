@@ -1,6 +1,8 @@
 import React from 'react'
+
+import Chat from './chat'
 import logo from './logo.svg'
-import './App.css'
+import './App.scss'
 
 const App = () => (
   <div className="App">
@@ -11,6 +13,11 @@ const App = () => (
     <p className="App-intro">
       To get started, edit <code>src/App.js</code> and save to reload.
     </p>
+    <div className="row">
+      <div className="col-12 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+        <Chat />
+      </div>
+    </div>
   </div>
 )
 
