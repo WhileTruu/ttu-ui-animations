@@ -14,7 +14,9 @@ const App = () => (
     </div>
     <div className="row">
       <div className="col-12 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
-        <Chat />
+        <div className="py-5">
+          <Chat />
+        </div>
         <CircleButton />
       </div>
     </div>

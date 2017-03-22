@@ -4,11 +4,9 @@ import MessageComposer from './messageComposer'
 import MessageArea from './messageArea'
 
 const App = () => (
-  <div>
-    <button />
-    <div className="card w-75">
-      <div className="card-block">
-        <h4 className="card-title">Card title</h4>
+  <div className="col-6 offset-3">
+    <div className="card">
+      <div className="card-block p-0">
         <MessageArea />
         <MessageComposer />
       </div>
