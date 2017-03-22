@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from './logo.svg'
 import './App.css'
+import CircleButton from './circleButton/CircleButton'
 
 const App = () => (
   <div className="App">
@@ -8,9 +9,8 @@ const App = () => (
       <img src={logo} className="App-logo" alt="logo" />
       <h2>Welcome to React</h2>
     </div>
-    <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-    </p>
+    <CircleButton />
+
   </div>
 )
 
