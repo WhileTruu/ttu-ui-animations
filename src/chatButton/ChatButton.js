@@ -5,11 +5,15 @@ const ChatButton = ({ toggleOpenState, isOpen }) => (
   <div className="col-md-2">
     <button
       onClick={toggleOpenState}
-      className="btn btn-circle btn-primary"
+      className={`btn btn-circle btn-primary ${isOpen ? 'open' : ''}`}
     >
       <i
         aria-hidden="true"
-        className={`fa fa-comments ${isOpen ? 'open' : ''}`}
+        className="fa fa-comments fa-2x icon-open"
+      />
+      <i
+        aria-hidden="true"
+        className="fa fa-times fa-2x icon-close"
       />
     </button>
   </div>
