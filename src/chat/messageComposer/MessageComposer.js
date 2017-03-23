@@ -11,6 +11,10 @@ class MessageComposer extends Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.isOpen) setTimeout(() => this.textInput.focus(), 0)
+  }
+
   onMessageChange(event) {
     this.setState({ message: event.target.value })
     this.textInput.style.height = 'auto'
@@ -39,6 +43,9 @@ class MessageComposer extends Component {
 
 MessageComposer.propTypes = {
   changeComposerHeight: PropTypes.func.isRequired,
+  // HACK: for whatever reason eslint is not ok with
+  // me having and not having this propType for nextProp
+  isOpen: PropTypes.bool.isRequired, // eslint-disable-line react/no-unused-prop-types
 }
 
 export default MessageComposer

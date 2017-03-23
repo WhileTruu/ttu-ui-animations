@@ -19,11 +19,15 @@ class Chat extends Component {
   }
 
   render() {
+    const { isOpen } = this.props
     return (
-      <div className={`chat-frame ${this.props.isOpen ? '' : 'hidden'}`}>
+      <div className={`chat-frame ${isOpen ? '' : 'hidden'}`}>
         <div className="chat-components-container">
           <MessageArea composerHeight={this.state.composerHeight} />
-          <MessageComposer changeComposerHeight={this.changeComposerHeight} />
+          <MessageComposer
+            isOpen={isOpen}
+            changeComposerHeight={this.changeComposerHeight}
+          />
         </div>
       </div>
     )
