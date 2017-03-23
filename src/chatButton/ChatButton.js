@@ -7,22 +7,28 @@ const ChatButton = ({ toggleOpenState, isOpen }) => (
       onClick={toggleOpenState}
       className={`btn btn-circle btn-primary ${isOpen ? 'open' : ''}`}
     >
-      <i
-        aria-hidden="true"
-        className="fa fa-comments fa-2x icon-open"
-      />
-      <i
-        aria-hidden="true"
-        className="fa fa-times fa-2x icon-close"
-      />
+      { isOpen ? (<OpenIcon />) : (<CloseIcon />)}
     </button>
   </div>
 )
 
+export default ChatButton
 
 ChatButton.propTypes = {
   toggleOpenState: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
 }
 
-export default ChatButton
+const CloseIcon = () => (
+  <i
+    aria-hidden="true"
+    className="fa fa-comments fa-2x icon-open"
+  />
+)
+
+const OpenIcon = () => (
+  <i
+    aria-hidden="true"
+    className="fa fa-times fa-2x icon-close"
+  />
+)
