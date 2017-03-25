@@ -2,19 +2,19 @@ import React, { PropTypes } from 'react'
 import './ChatButton.scss'
 
 const ChatButton = ({ toggleOpenState, isOpen }) => (
-  <div className="col-md-2">
+  <div className="chat-button">
     <button
       onClick={toggleOpenState}
-      className={`btn btn-circle btn-primary ${isOpen ? 'open' : ''}`}
+      className={'p-4 btn btn-circle btn-primary'}
     >
-      <i
-        aria-hidden="true"
-        className="fa fa-comments fa-2x icon-open"
-      />
-      <i
-        aria-hidden="true"
-        className="fa fa-times fa-2x icon-close"
-      />
+      <div className={`button-icon-container ${isOpen ? 'open' : 'closed'}`}>
+        <div className="button-icon">
+          <i
+            aria-hidden="true"
+            className={`icon ${isOpen ? 'open' : ''}`}
+          />
+        </div>
+      </div>
     </button>
   </div>
 )

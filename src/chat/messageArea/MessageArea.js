@@ -1,22 +1,27 @@
 import React, { Component, PropTypes } from 'react'
 
+import Message from './message'
+
 import './MessageArea.scss'
 
 class MessageArea extends Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.composerHeight === nextProps.composerHeight) return
     const composerHeight = nextProps.composerHeight || 0
-    this.messageArea.style.marginBottom = `${Math.min(composerHeight, 150)}px`
+    this.messageArea.style.paddingBottom = `${Math.min(composerHeight, 150)}px`
   }
 
   render() {
+    const { messages } = this.props
     return (
       <div
-        className="message-area p-3"
-        style={{ marginBottom: '52px' }}
+        className="message-area px-3 pt-3"
+        style={{ paddingBottom: '52px' }}
         ref={(input) => { this.messageArea = input }}
       >
-        <div>asd</div>
+        {messages ? messages.map(message => (
+          <Message message={message} />
+        )) : ''}
       </div>
     )
   }
@@ -24,10 +29,12 @@ class MessageArea extends Component {
 
 MessageArea.propTypes = {
   composerHeight: PropTypes.number,
+  messages: PropTypes.arrayOf(PropTypes.object),
 }
 
 MessageArea.defaultProps = {
   composerHeight: null,
+  messages: null,
 }
 
 export default MessageArea

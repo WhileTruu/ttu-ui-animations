@@ -25,7 +25,9 @@ class App extends Component {
             <div className="py-5">
               <Chat isOpen={isOpen} />
             </div>
-            <ChatButton toggleOpenState={this.toggleOpenState} isOpen={isOpen} />
+            <div className="p-5">
+              <ChatButton toggleOpenState={this.toggleOpenState} isOpen={isOpen} />
+            </div>
           </div>
         </div>
       </div>

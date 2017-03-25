@@ -11,6 +11,32 @@ class Chat extends Component {
     this.changeComposerHeight = this.changeComposerHeight.bind(this)
     this.state = {
       composerHeight: null,
+      messages: [
+        {
+          data: 'yolo',
+          timeStamp: 121,
+          author: 2,
+          recipient: 1,
+        },
+        {
+          data: 'yolo2',
+          timeStamp: 122,
+          author: 2,
+          recipient: 1,
+        },
+        {
+          data: 'yolo3',
+          timeStamp: 123,
+          author: 2,
+          recipient: 1,
+        },
+        {
+          data: 'yolo4',
+          timeStamp: 124,
+          author: 2,
+          recipient: 1,
+        },
+      ],
     }
   }
 
@@ -20,14 +46,20 @@ class Chat extends Component {
 
   render() {
     const { isOpen } = this.props
+    const { messages } = this.state
     return (
-      <div className={`chat-frame ${isOpen ? '' : 'hidden'}`}>
-        <div className="chat-components-container">
-          <MessageArea composerHeight={this.state.composerHeight} />
-          <MessageComposer
-            isOpen={isOpen}
-            changeComposerHeight={this.changeComposerHeight}
-          />
+      <div className="chat-container" style={{ position: 'absolute' }}>
+        <div className={`chat-frame ${isOpen ? '' : 'hidden'}`}>
+          <div className="chat-components-container">
+            <MessageArea
+              messages={messages}
+              composerHeight={this.state.composerHeight}
+            />
+            <MessageComposer
+              isOpen={isOpen}
+              changeComposerHeight={this.changeComposerHeight}
+            />
+          </div>
         </div>
       </div>
     )
