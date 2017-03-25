@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import './ChatButton.scss'
 
 const ChatButton = ({ toggleOpenState, isOpen }) => (
-  <div className="chat-button">
+  <div className={`chat-button ${isOpen ? 'open' : 'closed'}`}>
     <button
       onClick={toggleOpenState}
       className={'p-4 btn btn-circle btn-primary'}
@@ -11,7 +11,7 @@ const ChatButton = ({ toggleOpenState, isOpen }) => (
         <div className="button-icon">
           <i
             aria-hidden="true"
-            className={`icon ${isOpen ? 'open' : ''}`}
+            className={`icon ${isOpen ? 'open' : 'closed'}`}
           />
         </div>
       </div>
