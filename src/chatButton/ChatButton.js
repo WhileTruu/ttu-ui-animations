@@ -19,10 +19,9 @@ const ChatButton = ({ toggleOpenState, isOpen }) => (
   </div>
 )
 
+export default ChatButton
 
 ChatButton.propTypes = {
   toggleOpenState: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
 }
-
-export default ChatButton
